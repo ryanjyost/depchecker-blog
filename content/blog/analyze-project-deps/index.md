@@ -142,14 +142,30 @@ To find the **npm package's latest release version**, you can go to it's offical
 ![Image](https://yosts-posts.s3.amazonaws.com/depchecker/depchecker_npm_version.png)
 
 To find **your project's version**, go to your `package.json` and find the package name key in the object of `dependencies` or `devDependencies`, and the project version will be the value for that key.
-![Image](https://yosts-posts.s3.amazonaws.com/depchecker/depchecker_npm_version.png)
+![Image](https://yosts-posts.s3.amazonaws.com/depchecker/depchecker_package_version.png)
+
+With tools like [npm-check](https://www.npmjs.com/package/npm-check) and [DepChecker](https://www.depchecker.com), you can get a nice, color-coded printout of the latest version, your version AND how far behind your version is.
+![Image](https://yosts-posts.s3.amazonaws.com/depchecker/depchecker_versionsBehind.png)
+
+#### How to assess the info
+
+The vast majority of npm package versioning will use the [semver](https://semver.org/) `MAJOR.MINOR.PATCH` format,
+which makes it pretty easy to figure out how far behind your project version is and how much potential risk there is to upgrading.
+
+- **PATCH (x.x.0)** -
+  This denotes "backwards compatible bug fixes." So if your version is just patches behind (like the lodash example in the screenshots above), you can pretty safely just bump the version.
+
+- **MINOR (x.0.x)** -
+  This denotes new functionality that's been added "in a backwards compatible manner". Again, probably safe to upgrade so long as tests all pass.
+
+- **MAJOR (0.x.x)** -
+  This denotes "incompatible API changes" and requires diving into the changelogs, release notes, and other documentation in order to figure out the implications of doing a `MAJOR` version upgrade.
+  You'll probably need to do some manual refactoring with a major version upgrade!
+
+**As a general note**, upgrading your project's dependency versions is safest with plenty of test coverage and a CI/CD pipeline.
+Awesome free tools like [dependabot](https://dependabot.com/) can help automate this for you.
 
 #### Why you should care
 
 This is the factor most commonly thought of when it comes to dependency management, for good reason!
 Staying up-to-date gives you access to the latest and greatest, and helps avoid getting so far behind the current version that major bugs emerge or upgrading becomes a nightmare.
-
-Most npm packages follow the semver versioning paradigm, making it pretty easy to compare your project’s package version with the latest released on npm.
-
-Patch (x.x.0)
-This denotes a "backwards compatible bug fixes."

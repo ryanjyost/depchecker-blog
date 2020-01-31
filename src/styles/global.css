@@ -1,0 +1,134 @@
+body {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #fff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span {
+  color: #fff;
+}
+
+h1 {
+  line-height: 1.2;
+}
+
+p {
+  line-height: 1.8;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+span {
+  line-height: 1.5;
+}
+
+h3 {
+  margin-top: 0px;
+}
+
+p,
+ul,
+ol {
+  font-size: 18px;
+}
+
+a {
+  border-bottom: 2px solid rgba(21, 126, 223, 1);
+  font-weight: bold;
+}
+
+ul,
+ol {
+  margin-left: 20px;
+}
+
+.blogPost h2 {
+  margin: 100px 0px 30px 0px;
+  width: 100%;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 5px;
+  font-size: 30px;
+}
+
+.blogPost h3 {
+  margin: 60px 0px 30px 0px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 5px;
+}
+
+.blogPost h4 {
+  text-transform: none !important;
+  margin: 40px 0px 15px 0px;
+  letter-spacing: 0.05em;
+  font-size: 20px;
+}
+
+.blogPost p,
+ul,
+ol {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.blogPost strong {
+  color: rgba(255, 255, 255, 1);
+}
+
+.blogPost img {
+  margin: 20px 0px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 7px 20px rgba(255, 255, 255, 0.15),
+    0 3px 3px rgba(255, 255, 255, 0.2);
+  padding: 0px;
+}
+
+code {
+  text-shadow: none !important;
+}
+
+:not(pre) > code[class*="language-"] {
+  padding: 3px 6px !important;
+  border-radius: 3px !important;
+  margin: 0px 3px;
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 1) !important;
+  text-shadow: none !important;
+  font-size: 16px !important;
+  font-family: monospace !important;
+}
+
+.gatsby-highlight {
+  text-shadow: none !important;
+  margin-bottom: 50px;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  background-color: transparent !important;
+}
+
+.language-text {
+  color: rgba(60, 146, 140, 1) !important;
+  background-color: rgba(67, 178, 170, 0.1) !important;
+  font-weight: 600;
+}
+
+.language-javascript,
+.language-jsx,
+.language-text {
+  border-radius: 3px;
+}

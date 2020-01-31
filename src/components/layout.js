@@ -1,5 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
+import "prismjs/themes/prism-tomorrow.css";
+
 
 import { rhythm, scale } from "../utils/typography"
 
@@ -14,15 +16,17 @@ class Layout extends React.Component {
         <h1
           style={{
             ...scale(1.5),
-            marginBottom: rhythm(1.5),
+            marginBottom: rhythm(0.5),
             marginTop: 0,
+            color:'rgba(21, 126, 223, 1)',
           }}
         >
           <Link
             style={{
               boxShadow: `none`,
               textDecoration: `none`,
-              color: `inherit`,
+              color: 'rgba(21, 126, 223, 1)',
+              border: "none",
             }}
             to={`/`}
           >
@@ -36,6 +40,7 @@ class Layout extends React.Component {
           style={{
             fontFamily: `Montserrat, sans-serif`,
             marginTop: 0,
+            color: 'rgba(21, 126, 223, 1)',
           }}
         >
           <Link
@@ -43,6 +48,7 @@ class Layout extends React.Component {
               boxShadow: `none`,
               textDecoration: `none`,
               color: `inherit`,
+              border: "none",
             }}
             to={`/`}
           >
@@ -62,8 +68,8 @@ class Layout extends React.Component {
       >
         <header>{header}</header>
         <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
+        <footer style={{ opacity: 0.7 }}>
+          © DepChecker {new Date().getFullYear()}, Built with
           {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a>
         </footer>

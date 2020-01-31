@@ -40,27 +40,26 @@ const Bio = () => {
         marginBottom: rhythm(2.5),
       }}
     >
-      <Image
-        fixed={data.avatar.childImageSharp.fixed}
-        alt={author}
-        style={{
-          marginRight: rhythm(1 / 2),
-          marginBottom: 0,
-          minWidth: 50,
-          borderRadius: `100%`,
-        }}
-        imgStyle={{
-          borderRadius: `50%`,
-        }}
-      />
-      <p>
-        Written by <strong>{author}</strong> who lives and works in San
-        Francisco building useful things.
-        {` `}
-        <a href={`https://twitter.com/${social.twitter}`}>
-          You should follow him on Twitter
-        </a>
-      </p>
+      {/*<Image*/}
+      {/*  fixed={data.avatar.childImageSharp.fixed}*/}
+      {/*  alt={author}*/}
+      {/*  style={{*/}
+      {/*    marginRight: rhythm(1 / 2),*/}
+      {/*    marginBottom: 0,*/}
+      {/*    minWidth: 50,*/}
+      {/*    borderRadius: `100%`,*/}
+      {/*  }}*/}
+      {/*  imgStyle={{*/}
+      {/*    borderRadius: `50%`,*/}
+      {/*  }}*/}
+      {/*/>*/}
+      <h3>
+        <strong>
+          DepChecker is a free tool that makes it easy to analyze and monitor
+          your npm dependencies.&nbsp;
+          <a href={`https://depchecker.com`}>Try it out!</a>
+        </strong>
+      </h3>
     </div>
   )
 }

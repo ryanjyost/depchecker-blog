@@ -1,14 +1,23 @@
 module.exports = {
+  pathPrefix: `/blog`,
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
-    author: `Kyle Mathews`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    title: `DepChecker Blog`,
+    author: `Ryan Yost`,
+    description: `A blog about npm dependencies and other JavaScript stuff.`,
+    siteUrl: `https://depchecker.com/blog`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `ryanjyost`,
     },
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-s3`,
+      options: {
+        bucketName: "staging.blog.depchecker.com",
+        protocol: "https",
+        hostname: "staging.depchecker.com/blog",
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -39,9 +48,18 @@ module.exports = {
               wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
-          `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: "language-",
+              inlineCodeMarker: null,
+              aliases: {},
+              showLineNumbers: false,
+              noInlineHighlight: false,
+            },
+          },
         ],
       },
     },
@@ -63,7 +81,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `content/assets/favicon.png`,
       },
     },
     `gatsby-plugin-react-helmet`,

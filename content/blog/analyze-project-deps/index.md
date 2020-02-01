@@ -54,6 +54,9 @@ for (let dependency of dependencies) {
 There are a variety of useful factors that shed light on the state of your dependencies. The list we'll walk through
 isn't exhaustive, but it's the one I use and is pretty thorough.
 
+#### The factors to consider are...
+1. What does the dependency do?
+
 **For each factor, I'll break down the following things...**
 
 - Exactly **what** it is
@@ -169,3 +172,29 @@ Awesome free tools like [dependabot](https://dependabot.com/) can help automate 
 
 This is the factor most commonly thought of when it comes to dependency management, for good reason!
 Staying up-to-date gives you access to the latest and greatest, and helps avoid getting so far behind the current version that major bugs emerge or upgrading becomes a nightmare.
+
+### Factor 4: When was the dependency last updated?
+
+Whenever an npm package has a new version, it needs to be uploaded and published to the npm repository.
+The most recent time that this occurred is called the "Last Publish". So, you can say something like "React's last publish was 2 weeks ago."
+
+#### Where to find info about it
+
+You can quickly find how long it's been since the last publish on a package's npm repository page.
+![Image](https://yosts-posts.s3.amazonaws.com/depchecker/depchecker_npm_lastPublish.png)
+
+For more details about exact dates of version releases, you'll have to check out any releases on GitHub or use the npm repository API.
+
+#### How to assess the info
+
+Generally speaking, it's a great sign if an npm package is constantly being updated and has a recent last publish date - it signifies that the contributors are actively involved and care about the dependency.
+
+If a package hasn't been updated for a year or more, on the other hand, that could signify that the package is no longer maintained and neglected.
+
+How to interpret the exact time since last publish can vary from package to package depending on its nature.
+For example, a library of basic statistics probably doesn't need to be updated that often. 
+Though in the modern age of JavaScript, not updating for a while has the potential for compiling issues or incompatible versions of other dependencies.
+
+I have some general, subjective rules-of-thumb in my head for how long it's been since the last publish...
+
+#### Why you should care

@@ -332,7 +332,7 @@ If you mistakenly use an npm dependency in a manner against the license, then yo
 
 ## And that's it!
 
-This is just one way to approach npm dependency management - hope it helps!
+This is just one way to approach npm dependency management - hope it helps you with your dependencies!
 
 ### List of tools to help you manage dependencies
 

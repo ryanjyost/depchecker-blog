@@ -57,7 +57,14 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "prep-deploy": "rm -R -f public/blog && cp public/index.html public/blog && mkdir blog && cp -R public/ blog && mv blog public/blog && rm -R -f blog",
-    "deploy": "aws s3 sync public/ s3://staging.blog.depchecker.com --delete"
+    "prep-deploy:index": "cp public/index.html public/blog",
+    "deploy:clean": "rm -R -f public/blog",
+    "prep-deploy": "rm -R -f public/blog && mkdir blog && cp -R public/ blog && mv blog public/blog && rm -R -f blog",
+    "deploy:index": "aws s3 sync public/blog s3://blog.depchecker.com",
+    "deploy": "aws s3 sync public/ s3://blog.depchecker.com --delete",
+    "upload:staging:index": "aws s3 sync public/blog s3://staging.blog.depchecker.com",
+    "upload:staging": "aws s3 sync public/ s3://staging.blog.depchecker.com --delete",
+    "upload": "aws s3 sync public/ s3://blog.depchecker.com --delete",
+    "deploy:staging": "npm run deploy:clean && npm run prep-deploy && npm run upload:staging && npm run deploy:clean && npm run prep-deploy:index && npm run upload:staging:index"
   }
 }
